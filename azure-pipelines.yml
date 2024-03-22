@@ -17,5 +17,5 @@ stages:
             command: 'install'
         - task: Npm@1
           inputs:
-              command: 'custom'
-              workingDir: '$(buildstageArtifactdirectory)'
+            command: 'custom'
+            workingDir: '$(Build.SourcesDirectory)/Build'
