@@ -19,3 +19,8 @@ stages:
         - task: CmdLine@2
           inputs:
            script: 'npm run build' 
+        - task: PublishBuildArtifacts@1
+          inputs:
+            PathtoPublish: '$(Build.SourcesDirectory)/build/'
+            ArtifactName: 'todo-app'
+            publishLocation: 'Container'
