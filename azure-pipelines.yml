@@ -6,7 +6,8 @@ stages:
   - stage: Buildstage
     displayName: Buildstage
     jobs:
-      - job: 
+      - job: buildjob
+        displayName: build job
         steps:
         - task: NodeTool@0
           inputs:
@@ -15,7 +16,6 @@ stages:
         - task: Npm@1
           inputs:
             command: 'install'
-        - task: Npm@1
+        - task: CmdLine@2
           inputs:
-            command: 'custom'
-            workingDir: '$(Build.SourcesDirectory)/Build'
+           script: 'npm run build' 
