@@ -39,11 +39,11 @@ stages:
             downloadPath: '$(System.ArtifactsDirectory)'
         - task: CopyFilesOverSSH@0
           inputs:
-                sshEndpoint: 'sshconnection'
-                sourceFolder: '$(Build.SourcesDirectory)'
-                contents: '**'
-                targetFolder: '/var/www/html/'
-                readyTimeout: '20000'
+            sshEndpoint: 'sshconnection'
+            sourceFolder: '$(System.ArtifactsDirectory)'
+            contents: '**'
+            targetFolder: '/var/www/html/'
+            readyTimeout: '20000'
         - task: SSH@0
           inputs:
             sshEndpoint: 'sshconnection'
