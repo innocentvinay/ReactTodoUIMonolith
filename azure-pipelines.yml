@@ -40,7 +40,7 @@ stages:
         - task: CopyFilesOverSSH@0
           inputs:
             sshEndpoint: 'sshconnection'
-            sourceFolder: '$(System.ArtifactsDirectory)/todo app/'
+            sourceFolder: '$(System.ArtifactsDirectory)/todo app'
             contents: '**'
             targetFolder: '/var/www/html/'
             readyTimeout: '20000'
